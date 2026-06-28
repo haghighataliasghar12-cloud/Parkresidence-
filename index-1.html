@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>پارک رزیدنس - گزارش مراحل ساخت</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <div class="brand-icon">🏗️</div>
+        <div class="brand-text">
+          <div class="brand-title">پارک رزیدنس</div>
+          <div class="brand-sub">گزارش مراحل ساخت</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="btn-qr" id="btnQR" title="QR Code">&#9707;</button>
+        <button class="btn-admin" id="btnAdminOpen">پنل مدیر</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">پروژه <span>پارک رزیدنس</span></h1>
+      <p class="hero-sub">گزارش لحظه‌ای مراحل ساخت</p>
+      <p class="hero-tag">شفافیت · کیفیت · اعتماد</p>
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span>درصد پیشرفت کل پروژه</span>
+          <span class="progress-pct" id="totalPct">۰٪</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAGES -->
+  <main class="main-content">
+    <div class="stages-header">
+      <span class="stages-icon">🏛️</span>
+      <span class="stages-title">مراحل ساخت پروژه</span>
+    </div>
+    <div id="stagesList" class="stages-list"></div>
+  </main>
+
+  <!-- QR MODAL -->
+  <div class="modal-overlay" id="qrModal">
+    <div class="modal-box qr-box">
+      <button class="modal-close" id="qrClose">✕</button>
+      <h3>اسکن کنید</h3>
+      <p>برای مشاهده مراحل ساخت</p>
+      <div id="qrCode"></div>
+      <p class="qr-url" id="qrUrl"></p>
+    </div>
+  </div>
+
+  <!-- ADMIN LOGIN MODAL -->
+  <div class="modal-overlay" id="adminModal">
+    <div class="modal-box">
+      <button class="modal-close" id="adminClose">✕</button>
+      <h3>ورود به پنل مدیر</h3>
+      <input type="password" class="input-field" id="adminPass" placeholder="رمز عبور را وارد کنید" />
+      <div class="error-msg" id="adminError"></div>
+      <button class="btn-primary" id="adminLogin">ورود</button>
+    </div>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div class="modal-overlay" id="adminPanel">
+    <div class="modal-box admin-panel-box">
+      <button class="modal-close" id="adminPanelClose">✕</button>
+      <h3>پنل مدیریت</h3>
+      <div id="adminStagesList" class="admin-stages-list"></div>
+    </div>
+  </div>
+
+  <!-- GALLERY MODAL -->
+  <div class="modal-overlay" id="galleryModal">
+    <div class="modal-box gallery-box">
+      <button class="modal-close" id="galleryClose">✕</button>
+      <h3 id="galleryTitle"></h3>
+      <div id="galleryGrid" class="gallery-grid"></div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <img id="lightboxImg" src="" alt="" />
+  </div>
+
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
